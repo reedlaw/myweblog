@@ -2,7 +2,7 @@
 
 <%= error_messages_for :post %>
 
-<% form_for(@post) do |f| %>
+<% form_for([:admin, @post]) do |f| %>
   <p>
     <b>Title</b><br />
     <%= f.text_field :title %>
@@ -19,4 +19,4 @@
 <% end %>
 
 <%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', admin_posts_path %>

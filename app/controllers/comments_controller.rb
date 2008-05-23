@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :load_post
+
   # GET /comments
   # GET /comments.xml
   def index

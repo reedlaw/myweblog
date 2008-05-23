@@ -1,11 +1,11 @@
 <p>
   <b>Title:</b>
-  <%=h @post.title %>
+  <%= @post.title %>
 </p>
 
 <p>
   <b>Body:</b>
-  <%=h @post.body %>
+  <%= textilize(@post.body) %>
 </p>
 
 <% unless @post.comments.empty? %>
