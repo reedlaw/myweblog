@@ -1,3 +1,50 @@
-#ruby {
-  color: red;
-  }
+* {
+  margin: 0pt;
+  padding: 0pt; }
+  
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS',Trebuchet,arial,verdana,sans-serif;
+  font-size: 100%; }
+  
+body, html {
+  height: 100%;
+  width: 100%; }
+  
+html > body {
+  font-size: 14px; }
+  
+h1 {
+  padding: 1em; }
+  
+a img {
+  border: 0; }
+
+pre { 
+border: 1px solid #8A84A7; 
+padding: 0 1em 1em 1em; 
+margin: 1em; 
+background: #000; 
+color: #fff; 
+ white-space: pre-wrap;
+ white-space: -moz-pre-wrap;
+ white-space: -o-pre-wrap; }
+
+.keyword {
+  color: #E28964; }
+  
+.method {
+  color: #89BDFF; }
+  
+.punct {
+}
+
+.ident {
+  color: #fff; }
+  
+.constant {
+  color: #0066CC; }
+  
+.string {
+  color: #65B042; }

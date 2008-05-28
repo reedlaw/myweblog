@@ -7,10 +7,10 @@ module ApplicationHelper
     in_pre = false
     language = nil
     text_pieces.collect do |piece|
-      if piece =~ /^<code class="?(.*)">$/
+      if piece =~ /^<code class="(.*)">$/
         language = $1
         in_pre = true
-        piece
+        piece + "\r\n"
       elsif piece == "</code>"
         in_pre = false
         language = nil
@@ -34,7 +34,7 @@ module ApplicationHelper
   
   def code_highlight(text)
       convertor = Syntax::Convertors::HTML.for_syntax "ruby"
-      html = convertor.convert(text)
+      html = convertor.convert(text, false)
   end
 
 end

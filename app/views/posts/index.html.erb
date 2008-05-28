@@ -2,8 +2,8 @@
 
 <% for post in @posts %>
   <% div_for(post) do %>
-  <h3 class="post_title"><%= post.title %></h3>
-    <p><%= code_highlight_and_textile(post.body) %></p>
-    <%= link_to 'Show', post %>
+  <h3 class="post_title"><%= link_to post.title, post %></h3>
+    <%= code_highlight_and_textile(post.body) %>
   <% end %>
 <% end %>
+
