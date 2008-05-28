@@ -9,7 +9,7 @@
 <% for post in @posts %>
   <tr>
     <td><%= post.title %></td>
-    <td><%= textilize(post.body) %></td>
+    <td><%= code_highlight_and_textile(post.body) %></td>
     <td><%= link_to 'Show', [:admin, post] %></td>
     <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
     <td><%= link_to 'Destroy', [:admin, post], 

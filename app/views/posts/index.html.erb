@@ -3,7 +3,7 @@
 <% for post in @posts %>
   <% div_for(post) do %>
   <h3 class="post_title"><%= post.title %></h3>
-    <p><%= textilize(post.body) %></p>
+    <p><%= code_highlight_and_textile(post.body) %></p>
     <%= link_to 'Show', post %>
   <% end %>
 <% end %>

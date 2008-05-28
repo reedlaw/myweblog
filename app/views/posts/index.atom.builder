@@ -5,7 +5,7 @@ atom_feed do |feed|
   for post in @posts
     feed.entry(post) do |entry|
       entry.title(post.title)
-      entry.content(post.body, :type => 'html')
+      entry.content(code_highlight_and_textile(post.body), :type => 'html')
       entry.author do |author|
         author.name("Reed Law")
       end
