@@ -1,23 +1,23 @@
 <h1>Admin zone</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-  </tr>
-
-<% for post in @posts %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= code_highlight_and_textile(post.body) %></td>
-    <td><%= link_to 'Show', [:admin, post] %></td>
-    <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
-    <td><%= link_to 'Destroy', [:admin, post], 
-      :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
 <%= link_to 'New post', new_admin_post_path %>
+<% for post in @posts %>
+  <% div_for(post) do %>
+<div class="post_title">
+  <h3><%= link_to post.title, [:admin, post] %></h3>
+  <%= link_to 'Edit', edit_admin_post_path(post) %>
+  <%= link_to 'Delete', [:admin, post], :confirm => 'Are you sure?', :method => :delete %>
+</div>
+<div class="post_body">
+    <%= code_highlight_and_textile(post.body) %>
+</div>
+<div class="post_footer">
+  <% comments = post.comments.count %>
+  <% label = comments == 1 ? " comment" : " comments" %>
+  <%= link_to (comments.to_s + label), [:admin, post] %>
+</div>
+  <% end %>
+<% end %>
+
+
+
+

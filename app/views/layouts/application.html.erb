@@ -4,15 +4,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Reed's Blog</title>
+  <title>Reed the Weblog</title>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag :defaults, :cache => true %>
 </head>
 <body>
-
+<div id="header">
 <p style="color: green"><%= flash[:notice] %></p>
-
+<h1 id="title"><a href="/">Reed the Weblog</a></h1>
+</div>
+<div id="content">
 <%= yield  %>
-
+</div>
+<div id="sidebar">
+Reed Law is the husband of Winnie Law. They live in China and enjoy fruit smoothies.
+</div>
 </body>
 </html>
