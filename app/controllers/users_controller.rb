@@ -1,4 +1,5 @@
 class UsersController < ActionController::Base
+  before_filter :registration_open
 
   # render new.rhtml
   def new
@@ -14,4 +15,9 @@ class UsersController < ActionController::Base
     render :action => 'new'
   end
 
+  def registration_open
+    if User.find(:all)
+      redirect_back_or_default('/')
+    end
+  end
 end

@@ -1,7 +1,7 @@
 class Admin::PostsController < ApplicationController
   skip_before_filter :verify_authenticity_token 
-  before_filter :authenticate
-
+  before_filter :login_required
+  
   # GET /posts
   # GET /posts.xml
   def index
