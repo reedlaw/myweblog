@@ -58,3 +58,4 @@ Rails::Initializer.run do |config|
   # config.active_record.default_timezone = :utc
 end
 require 'tealcloth'
+require 'syntax/convertors/html'
