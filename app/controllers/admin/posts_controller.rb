@@ -91,7 +91,7 @@ class Admin::PostsController < ApplicationController
   def authenticate
     authenticate_or_request_with_http_basic do |name, pass|
       #User.authenticate(name, pass)
-      name == 'rlaw' && pass == '1234'      
+      name == 'name' && pass == 'pass'      
     end
   end
 end
